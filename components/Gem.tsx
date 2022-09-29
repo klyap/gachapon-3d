@@ -47,6 +47,7 @@ export function Gem() {
         onPointerEnter={() => {setHovered(true)}}
         // onPointerEnter={() => {setHovered(true); play({id: 'initial'})}}
         onPointerLeave={() => setHovered(false)}
+        // @ts-ignore
         geometry={nodes.Star.geometry} 
         material={material.yellow}
         // position={[-27.83, 109.66, 518.23]}
