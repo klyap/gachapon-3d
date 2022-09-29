@@ -21,6 +21,14 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: rgb(234, 255, 253);
   }
+}
+
+canvas {
+  margin: 0;
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+  background: rgb(234, 255, 253);
 }
