@@ -7,13 +7,13 @@ import {GachaponMachine} from './gachapon_machine';
 import {StarKnob} from './StarKnob';
 import * as material from '../components/materials';
 import useSound from 'use-sound';
-import bgMusic from '../public/sounds/bg.mp3';
+// import bgMusic from '../public/sounds/bg.mp3';
 
 export const GachaponMachineCanvas = () => {  
-  const [play] = useSound(bgMusic);
+  // const [play] = useSound(bgMusic);
 
   useEffect(() => {
-    play();
+    // play();
   })
 
   return (
@@ -23,7 +23,7 @@ export const GachaponMachineCanvas = () => {
           scale={1.2} 
           rotation={new THREE.Euler(0, 0, 0)} 
           position={new THREE.Vector3(0, -100, -1200)}/>
-        <StarKnob position={new THREE.Vector3(0, -100, -1100)}/>
+        <StarKnob />
         <Environment preset="sunset" />
         {/* <OrbitControls makeDefault /> */}
       </Suspense>
