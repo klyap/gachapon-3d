@@ -7,19 +7,18 @@ import {GachaponMachine} from './gachapon_machine';
 import {StarKnob} from './StarKnob';
 import * as material from '../components/materials';
 import useSound from 'use-sound';
-// import bgMusic from '../public/sounds/bg.mp3';
 
 export const GachaponMachineCanvas = () => {  
-  // const [play] = useSound(bgMusic);
+  const [play] = useSound('./sounds/bg.mp3', { volume: 0.3 });
 
   useEffect(() => {
-    // play();
+    play();
   })
 
   return (
     <Canvas dpr={1.5} linear camera={{ far:100000, near:5, fov:20, position:[-43.88, 218.96, 1766.62]}}>
       <Suspense fallback={null}>
-        <ambientLight intensity={0.7}/>
+        <ambientLight intensity={0.5}/>
         <GachaponMachine
           // scale={1.2} 
           rotation={new THREE.Euler(0, 0, 0)}

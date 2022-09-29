@@ -48,15 +48,15 @@ export function GachaponMachine(props) {
       </group> */}
       
       <group position={[-143.47, 432.63, 304.15]} rotation={[1.55, 0, 0]} scale={[1.55, 2.06, 1.55]}>
-        <pointLight intensity={0.45} decay={2} distance={321} position={[-1.3, 0, -0.06]} />
+        <pointLight intensity={0.2} decay={2} distance={321} position={[-1.3, 0, -0.06]} />
         <mesh geometry={nodes.Sphere_2.geometry} material={material.bluelight} position={[-0.82, 1.05, 2.18]} rotation={[-Math.PI / 2, 0, 0]} />
       </group>
       <group position={[109.32, 338.25, 443.33]} rotation={[1.55, 0, 0]} scale={[1.55, 2.06, 1.55]}>
-        <pointLight intensity={0.45} decay={2} distance={321} position={[-1.3, 0, -0.06]} />
+        <pointLight intensity={0.2} decay={2} distance={321} position={[-1.3, 0, -0.06]} />
         <mesh geometry={nodes.Sphere_2_1.geometry} material={material.bluelight} position={[-0.82, 1.05, 2.18]} rotation={[-Math.PI / 2, 0, 0]} />
       </group>
       <group position={[-38.04, 245.04, 455.14]} rotation={[1.55, 0, 0]} scale={[1.55, 2.06, 1.55]}>
-        <pointLight intensity={0.45} decay={2} distance={321} position={[-1.3, 0, -0.06]} />
+        <pointLight intensity={0.2} decay={2} distance={321} position={[-1.3, 0, -0.06]} />
         <mesh geometry={nodes.Sphere_2_2.geometry} material={material.bluelight} position={[-0.82, 1.05, 2.18]} rotation={[-Math.PI / 2, 0, 0]} />
       </group>
 

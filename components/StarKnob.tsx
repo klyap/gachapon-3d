@@ -4,7 +4,6 @@ import * as THREE from 'three';
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber'
 import { useSpring, animated, a, config } from "@react-spring/three";
 import useSound from 'use-sound';
-// import rattleSfx from '../public/sounds/rattle.mp3';
 
 import * as material from './materials';
 
@@ -13,12 +12,12 @@ export function StarKnob() {
   const starKnobRef = React.useRef(null);
   const [active, setActive] = useState(false);
   const [hovered, setHovered] = useState(false);
-  // const [play] = useSound(rattleSfx, {
-  //   sprite: {
-  //     initial: [5, 200],
-  //     full: [0, 350],
-  //   }
-  // });
+  const [play] = useSound('./sounds/rattle.mp3', {
+    sprite: {
+      initial: [5, 200],
+      full: [0, 350],
+    }
+  });
 
   const { rotation} = useSpring({
     rotation: (hovered && !active) ? Math.PI/6 : active ? Math.PI : 0,
@@ -44,8 +43,8 @@ export function StarKnob() {
         onPointerDown={() => {setActive(true)}}
         // onPointerDown={() => {setActive(true); play({id: 'full'})}}
         onPointerUp={() => setActive(false)}
-        onPointerEnter={() => {setHovered(true)}}
-        // onPointerEnter={() => {setHovered(true); play({id: 'initial'})}}
+        // onPointerEnter={() => {setHovered(true)}}
+        onPointerEnter={() => {setHovered(true); play({id: 'initial'})}}
         onPointerLeave={() => setHovered(false)}
         // @ts-ignore
         geometry={nodes.Star.geometry} 
