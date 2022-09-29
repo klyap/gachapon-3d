@@ -1,7 +1,7 @@
 const WELCOME_TEXT = [
-  "Hey there, space farer. Care to take a spin?",
+  "Hey there, spacefarer. Care to take a spin?",
   "What does the universe have in store for you, explorer?",
-  "Ah, you've finally made it!"
+  "Ah, you've finally made it! Go ahead, turn the knob!"
 ]
 
 function getRandomInt(max: number) {

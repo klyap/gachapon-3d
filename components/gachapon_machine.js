@@ -46,6 +46,7 @@ export function GachaponMachine(props) {
           <mesh geometry={nodes.Sphere_2_9.geometry} material={material.bluelight} position={[-0.82, 1.05, 2.18]} rotation={[-Math.PI / 2, 0, 0]} />
         </group>
       </group> */}
+      
       <group position={[-143.47, 432.63, 304.15]} rotation={[1.55, 0, 0]} scale={[1.55, 2.06, 1.55]}>
         <pointLight intensity={0.45} decay={2} distance={321} position={[-1.3, 0, -0.06]} />
         <mesh geometry={nodes.Sphere_2.geometry} material={material.bluelight} position={[-0.82, 1.05, 2.18]} rotation={[-Math.PI / 2, 0, 0]} />
@@ -59,11 +60,11 @@ export function GachaponMachine(props) {
         <mesh geometry={nodes.Sphere_2_2.geometry} material={material.bluelight} position={[-0.82, 1.05, 2.18]} rotation={[-Math.PI / 2, 0, 0]} />
       </group>
 
-      {/* <directionalLight intensity={0.09} decay={2} position={[-940.34, -185.75, -34.09]} rotation={[1.75, -1.37, -2.96]} /> */}
-      {/* <directionalLight intensity={0.12} decay={2} position={[-36.71, 306.26, 1499.73]} rotation={[-0.2, -0.02, 0.12]} /> */}
-      {/* <directionalLight intensity={0.09} decay={2} position={[-782.07, 1136.08, 1499.73]} rotation={[-0.65, -0.39, 0.47]} /> */}
-      {/* <directionalLight intensity={0.46} decay={2} position={[457.6, 300, -639.83]} rotation={[-2.7, 0.57, 0.86]} /> */}
-      
+      {/* <directionalLight intensity={0.09} decay={2} position={[-940.34, -185.75, -34.09]} rotation={[1.75, -1.37, -2.96]} />
+      <directionalLight intensity={0.12} decay={2} position={[-36.71, 306.26, 1499.73]} rotation={[-0.2, -0.02, 0.12]} />
+      <directionalLight intensity={0.09} decay={2} position={[-782.07, 1136.08, 1499.73]} rotation={[-0.65, -0.39, 0.47]} />
+      <directionalLight intensity={0.46} decay={2} position={[457.6, 300, -639.83]} rotation={[-2.7, 0.57, 0.86]} />
+       */}
       {/* <PerspectiveCamera makeDefault={false} far={100000} near={5} fov={45} position={[-43.88, 218.96, 1766.62]} /> */}
       {/* <mesh geometry={nodes.ball_6.geometry} material={nodes.ball_6.material} position={[66.71, 382.12, 396.39]} rotation={[-0.02, 0, 0]} scale={2.79} /> */}
       <mesh geometry={nodes.ball_4.geometry} material={material.bubble2} position={[75.24, 407.75, 390.93]} rotation={[-0.02, 0, 0]} scale={2.79} />
@@ -80,7 +81,7 @@ export function GachaponMachine(props) {
       <mesh geometry={nodes.Torus.geometry} material={material.pink} position={[-18.99, 185.9, 384.13]} rotation={[-1.6, 0, 0]} scale={[2.79, 2.76, 2.79]} />
       <mesh geometry={nodes.Torus_2.geometry} material={material.pink} position={[-19.68, -100.74, 382.08]} rotation={[-1.6, 0, 0]} scale={2.79} />
       <mesh geometry={nodes.Sphere.geometry} material={material.glass} position={[-16.8, 357.19, 378.75]} scale={2.79} />
-      <mesh geometry={nodes.Boolean.geometry} material={nodes.Boolean.material} position={[-21.56, -13.82, 520.61]} rotation={[1.55, 0, 0.11]} scale={2.79}>
+      <mesh geometry={nodes.Boolean.geometry} material={material.paleyellow} position={[-21.56, -13.82, 520.61]} rotation={[1.55, 0, 0.11]} scale={2.79}>
         <mesh geometry={nodes.hole.geometry} material={material.glass} rotation={[-Math.PI / 2, 0, 0]} />
         <mesh geometry={nodes.Cylinder_1.geometry} material={material.paleyellow} position={[-4.81, -47.94, -19.94]} rotation={[-1.57, 0, 0]} />
       </mesh>

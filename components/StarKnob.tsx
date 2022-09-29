@@ -39,7 +39,7 @@ export function StarKnob() {
   }
   return (
     //[-138.6, 333.34, 383.79]
-    <group ref={starKnobRef} position={[-27.83, 30, -600]} dispose={null} >
+    <group ref={starKnobRef} position={[-27.83, -170, -690]} dispose={null} >
         <a.mesh 
         onPointerDown={() => {setActive(true)}}
         // onPointerDown={() => {setActive(true); play({id: 'full'})}}

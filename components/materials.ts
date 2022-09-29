@@ -12,7 +12,8 @@ export const glass = new THREE.MeshPhysicalMaterial({
 export const bubble = new THREE.MeshStandardMaterial({  
   roughness: 0.3,  
   color: 0x9494F4,
-  opacity: 0.5
+  opacity: 0.5,
+  // opacity: 0.1,
 });
 
 export const bubble2 = new THREE.MeshPhysicalMaterial({  
@@ -57,7 +58,7 @@ export const yellow = new THREE.MeshStandardMaterial({
 });
 
 export const paleyellow = new THREE.MeshStandardMaterial({  
-  roughness: 0.8,  
+  roughness: 0.8,
   color: 0xECEBC5,
 });
 

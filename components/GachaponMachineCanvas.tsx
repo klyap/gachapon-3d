@@ -17,12 +17,13 @@ export const GachaponMachineCanvas = () => {
   })
 
   return (
-    <Canvas dpr={1.5} camera={{ position: [0, -10, 50], near: 0.1, far: 1000 }}>
+    <Canvas dpr={1.5} linear camera={{ far:100000, near:5, fov:20, position:[-43.88, 218.96, 1766.62]}}>
       <Suspense fallback={null}>
-        <GachaponMachine 
-          scale={1.2} 
-          rotation={new THREE.Euler(0, 0, 0)} 
-          position={new THREE.Vector3(0, -100, -1200)}/>
+        <ambientLight intensity={0.7}/>
+        <GachaponMachine
+          // scale={1.2} 
+          rotation={new THREE.Euler(0, 0, 0)}
+          position={new THREE.Vector3(0, -300, -1200)}/>
         <StarKnob />
         <Environment preset="sunset" />
         {/* <OrbitControls makeDefault /> */}
