@@ -9,11 +9,12 @@ export const glass = new THREE.MeshPhysicalMaterial({
   // thickness: 0.5, // Add refraction!
 });
 
-export const bubble = new THREE.MeshStandardMaterial({  
+export const bubble = new THREE.MeshPhysicalMaterial({  
   roughness: 0.3,  
   color: 0x9494F4,
   opacity: 0.5,
-  // opacity: 0.1,
+  emissive: 0x9494F4,
+  emissiveIntensity: 0.8,
 });
 
 export const bubble2 = new THREE.MeshPhysicalMaterial({  
@@ -67,15 +68,15 @@ export const pink = new THREE.MeshStandardMaterial({
   color: 0xF99BBE,
 });
 
-export const gem = new THREE.MeshPhysicalMaterial({  
+export const gem = (color: number) => new THREE.MeshPhysicalMaterial({  
   roughness: 0,  
-  metalness: .2,
+  metalness: .1,
   // transmission: 1,
   // opacity: 0.1,
-  color: 0xbf459f,
+  color: color,
   specularIntensity: 1,
   envMapIntensity: .9,
-  emissive: 0xbf459f,
-  emissiveIntensity: 0.8
+  emissive: color,
+  emissiveIntensity: 0.2
   // thickness: 0.5, // Add refraction!
 });

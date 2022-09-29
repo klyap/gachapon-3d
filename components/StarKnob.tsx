@@ -24,32 +24,22 @@ export function StarKnob() {
     config: config.wobbly
   });
 
-  // useFrame(({ clock }) => {
-  //   const a = clock.getElapsedTime();
-  //   starKnobRef.current.rotation.z = a;
-  //   if (a % 10 == 1) setActive(!active)
-  // });
-
   const downloadImage = () => {
-    const a = document.createElement("a");
-    a.href = "/gem.png";
-    a.download = "prize.png";
-    a.click();
+    // const a = document.createElement("a");
+    // a.href = "../assets/gem.png";
+    // a.download = "prize.png";
+    // a.click();
   }
   return (
-    //[-138.6, 333.34, 383.79]
     <group ref={starKnobRef} position={[-27.83, -170, -690]} dispose={null} >
         <a.mesh 
-        onPointerDown={() => {setActive(true)}}
-        // onPointerDown={() => {setActive(true); play({id: 'full'})}}
+        onPointerDown={() => {setActive(true); downloadImage(); play({id: 'full'})}}
         onPointerUp={() => setActive(false)}
-        // onPointerEnter={() => {setHovered(true)}}
         onPointerEnter={() => {setHovered(true); play({id: 'initial'})}}
         onPointerLeave={() => setHovered(false)}
         // @ts-ignore
         geometry={nodes.Star.geometry} 
         material={material.yellow}
-        // position={[-27.83, 109.66, 518.23]}
         rotation-z={rotation}
         scale={2.79}
          />
