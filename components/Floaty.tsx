@@ -26,6 +26,9 @@ export function Floaty(props: PropsT) {
     // @ts-ignore
     ref.current.rotation.z = Math.sin(t / randomness);
     // @ts-ignore
+    ref.current.rotation.y = Math.sin(t / randomness);
+
+    // @ts-ignore
     ref.current.position.x = Math.cos(t * randomness) / 4 + ref.current.position.x;
     // @ts-ignore
     ref.current.position.y = Math.sin(t * randomness) / 5 + ref.current.position.y;

@@ -34,8 +34,8 @@ export const GachaponMachineCanvas = () => {
         <Floaty gltfNodeName='Icosahedron' material={material.gem(BLUE)} position={[50, 160, -790]} rotation={[-0.13, 0.47, 0.46]} scale={[2.06, 2.79, 2.79]} />
         <Floaty gltfNodeName='Icosahedron_2' material={material.gem(PINK)} position={[-100, 100, -700]} rotation={[-0.99, -0.3, -0.51]} scale={[2.06, 2.79, 0.36]} />
         <Floaty gltfNodeName='Sphere_2' material={material.bluelight} position={[-100, 130, -850]} rotation={[0, 0, 0]} scale={[1, 1, 1]} />
-        <Floaty gltfNodeName='Sphere_2' material={material.bluelight} position={[50, 160, -700]} rotation={[0, 0, 0]} scale={[1.2, 1.2, 1.2]} />
-        <Floaty gltfNodeName='Sphere_2' material={material.bluelight} position={[100, 60, -720]} rotation={[0, 0, 0]} scale={[1.2, 1.2, 1.2]} />
+        <Floaty gltfNodeName='Sphere_2' material={material.bluelight} position={[0, 100, -700]} rotation={[0, 0, 0]} scale={[1, 1, 1]} />
+        <Floaty gltfNodeName='Sphere_2' material={material.bluelight} position={[100, 20, -720]} rotation={[0, 0, 0]} scale={[1.4, 1.4, 1.4]} />
         <Floaty gltfNodeName='Sphere_2' material={material.bluelight} position={[-100, 10, -780]} rotation={[0, 0, 0]} scale={[1.2, 1.2, 1.2]} />
         <Floaty gltfNodeName='ball_4' material={material.bubble} position={[-130, 30, -820]} rotation={[0, 0, 0]} scale={[3, 3, 3]} />
         <Floaty gltfNodeName='ball_4' material={material.bubble2} position={[90, 100, -880]} rotation={[0, 0, 0]} scale={[2.7, 2.7, 2.7]} />
