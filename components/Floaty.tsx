@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react'
-import { useGLTF, PerspectiveCamera } from '@react-three/drei'
+import { useGLTF, PerspectiveCamera, Sparkles } from '@react-three/drei'
 import * as THREE from 'three';
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber'
 import { useSpring, animated, a, config } from "@react-spring/three";
 import useSound from 'use-sound';
-import {type Material} from 'three';
+import { type Material } from 'three';
 
 import * as material from './materials';
 
@@ -13,7 +13,7 @@ type PropsT = {
   rotation: [number, number, number],
   scale: [number, number, number],
   material: Material,
-  gltfNodeName: string 
+  gltfNodeName: string
 }
 
 export function Floaty(props: PropsT) {
@@ -40,11 +40,12 @@ export function Floaty(props: PropsT) {
     <group ref={ref} position={props.position} dispose={null} >
       <a.mesh
         // @ts-ignore
-        geometry={nodes[props.gltfNodeName].geometry} 
+        geometry={nodes[props.gltfNodeName].geometry}
         material={props.material}
         rotation={props.rotation}
-        scale={props.scale}      
+        scale={props.scale}
       />
+      <Sparkles count={40} scale={80} size={5000} speed={200} />
     </group>
   )
 }

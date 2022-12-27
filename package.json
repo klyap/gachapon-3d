@@ -21,6 +21,7 @@
     "react-dat-gui": "^4.1.1",
     "react-dom": "18.2.0",
     "three": "^0.145.0",
+    "threejs-meshline": "^2.0.12",
     "url-loader": "^4.1.1",
     "use-sound": "^4.0.1"
   },

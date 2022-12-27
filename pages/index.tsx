@@ -6,8 +6,8 @@ import { GachaponMachineCanvas } from '../components/GachaponMachineCanvas';
 import { Dialogue } from '../components/dialogue';
 import { getWelcomeText } from '../components/dialoguetext';
 import { createContext, useEffect, useState } from 'react';
-import { listEngines } from '../components/OpenAI';
 import { PrizeData } from '../types';
+import { PrizeModal } from '../components/PrizeModal';
 
 // export const PrizeContext = createContext({
 //   setPrize: (value: PrizeData | null) => void;
@@ -16,7 +16,6 @@ import { PrizeData } from '../types';
 const Home: NextPage = () => {
   const [welcomeText, setWelcomeText] = useState('');
   const [prize, setPrize] = useState<PrizeData | null>(null);
-  console.log("prize", prize);
 
   useEffect(() => {
     setWelcomeText(getWelcomeText());
@@ -40,16 +39,6 @@ const Home: NextPage = () => {
       {/* </PrizeContext.Provider> */}
     </div>
   )
-}
-
-const PrizeModal = ({ prizeData }: { prizeData: PrizeData }) => {
-  return (<div className={styles.prizeModal}>
-    <img className={styles.prizeImg} alt={prizeData.description} src={prizeData.imgUrl} />
-
-    <h1 className={styles.prizeName}>{prizeData.name}</h1>
-    <p className={styles.prizeDesc}>{prizeData.description}</p>
-  </div>)
-
 }
 
 export default Home

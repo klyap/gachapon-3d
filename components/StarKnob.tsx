@@ -4,10 +4,10 @@ import * as THREE from 'three';
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber'
 import { useSpring, animated, a, config } from "@react-spring/three";
 import useSound from 'use-sound';
-
 import * as material from './materials';
-import { generateItem } from './OpenAI';
 import { PrizeData } from '../types';
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export function StarKnob({ setPrize }: { setPrize: React.Dispatch<React.SetStateAction<PrizeData | null>> }) {
   const { nodes, materials } = useGLTF('./assets/gachapon_machine.gltf')
@@ -35,9 +35,10 @@ export function StarKnob({ setPrize }: { setPrize: React.Dispatch<React.SetState
 
   const handleClick = async () => {
     setActive(true); downloadImage(); play({ id: 'full' })
-    const prizeData = await generateItem();
+    // const prizeData = await generateItem();
+    const prizeData = await fetcher('/api/openai');
+    // const prizeData = {name: "hihi", description: "hiieee", url: }
     setPrize(prizeData);
-    console.log("setprize", prizeData)
   }
   return (
     <group ref={starKnobRef} position={[20, -170, -690]} dispose={null} >
