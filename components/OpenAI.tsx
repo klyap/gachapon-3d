@@ -49,6 +49,8 @@ export const generateItem = async () => {
     "n": 1,
     "size": "256x256"
   }
+
+  //@ts-ignore
   const response2 = await openai.createImage(imgReq).then(
     (resp) => {
       console.log(resp.data.data[0].url);
