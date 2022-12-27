@@ -11,14 +11,51 @@
   padding: 24px;
   color: palevioletred;
   font-size: large;
+  display: flex;
+  place-content: space-between;
 }
 
-.arrow
-{
+.triangle {
+  font-size: xx-large;
+  line-height: 0;
+}
+
+.prizeModal {
+  position: absolute;
+  width: 40%;
+  border-radius: 50px;
+  border: solid 6px palevioletred;
+  background-color: antiquewhite;
+  padding: 24px;
+  color: palevioletred;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prizeName {
+  font-size: larger;
+  font-weight: 700;
+}
+
+.prizeImg {
+  width: 256px;
+  border-radius: 20px;
+  margin: 12px;
+  border: solid white thick;
+}
+
+.prizeDesc {
+  text-align: center;
+  margin: 0;
+}
+
+.arrow {
   position: relative;
   bottom: -2rem;
   left: 50%;
-  margin-left:-20px;
+  margin-left: -20px;
   width: 40px;
   height: 40px;
 
@@ -34,12 +71,19 @@
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-30px);
   }
+
   60% {
     transform: translateY(-15px);
   }
@@ -159,13 +203,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }

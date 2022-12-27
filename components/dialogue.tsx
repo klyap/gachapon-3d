@@ -2,10 +2,11 @@
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export const Dialogue = (props: {text: string}) => {
+export const Dialogue = (props: { text: string }) => {
   return (
     <div className={styles.dialogueBox}>
-      <p>{props.text} {'▾'}</p><div className="arrow bounce"></div>
+      <p>{props.text} </p>
+      {/* <p className={styles.triangle}>{'▾'}</p> */}
     </div>
   )
 }
