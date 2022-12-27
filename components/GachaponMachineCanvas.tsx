@@ -10,7 +10,6 @@ import { StarKnob } from './StarKnob';
 import { Floaty } from './Floaty';
 import * as material from './materials';
 import { PrizeData } from '../types'
-import { CustomGeometryParticles } from './Particles'
 
 export const GachaponMachineCanvas = ({ setPrize }: { setPrize: React.Dispatch<React.SetStateAction<PrizeData | null>> }) => {
   const [play] = useSound('./sounds/bg.mp3', { volume: 0.3 });
@@ -42,7 +41,6 @@ export const GachaponMachineCanvas = ({ setPrize }: { setPrize: React.Dispatch<R
         <Floaty gltfNodeName='ball_4' material={material.bubble} position={[-60, 30, -820]} rotation={[0, 0, 0]} scale={[3, 3, 3]} />
         <Floaty gltfNodeName='ball_4' material={material.bubble2} position={[90, 100, -880]} rotation={[0, 0, 0]} scale={[2.7, 2.7, 2.7]} />
         <Floaty gltfNodeName='ball_5' material={material.bubble3} position={[20, -30, -840]} rotation={[0, 0, 0]} scale={[2.9, 2.8, 2.7]} />
-        {/* <CustomGeometryParticles count={100} /> */}
         <Environment preset="sunset" />
         {/* <OrbitControls makeDefault /> */}
       </Suspense>
