@@ -19,6 +19,7 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: rgb(234, 255, 253);
@@ -26,9 +27,10 @@ a {
 }
 
 canvas {
+  padding: 0;
   margin: 0;
   width: 100vw;
-  height: 70vh;
+  height: 80vh;
   overflow: hidden;
   background: rgb(234, 255, 253);
 }
