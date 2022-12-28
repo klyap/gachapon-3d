@@ -9,9 +9,7 @@ export const Dialogue = () => {
   const [showOptions, setShowOption] = useState(false);
 
   useEffect(() => {
-    // const textEle = <p>{getWelcomeText()}</p>
     setText(getWelcomeText());
-    // console.log(listEngines());
   }, [])
 
   return (
@@ -28,15 +26,15 @@ export const Dialogue = () => {
 
 const Options = ({ setText, setShowOption }: { setText: Dispatch<SetStateAction<JSX.Element | string>>, setShowOption: Dispatch<SetStateAction<boolean>> }) => {
   const creditText = <p>
-    {"This contraption is made with the arcane knowledge embued in"}
+    {"I am created with the arcane knowledge from"}
     <a className={styles.link} href={"https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/"}>
-      {" this spellbook about particles and shaders"}
+      {" this particles and shaders spellbook"}
     </a>
-    {" and the daemon text-davinci-300 from the realm of OpenAI. "}</p>;
+    {" and the daemon text-davinci-300. "}</p>;
   const musicText = <p>
     {"You are listening to 'little ideology', conjured by the bard "}
     <a className={styles.link} href={"https://touhoujam.bandcamp.com/album/touhou-jam-jams"}>{'iceerules'}</a>.
-    {'Other sound effects are from a long forgotten source (I am so sorry >_<). Historians surmise that it may have been from a free itch.io Gameboy Sound Effect pack. '}
+    {' Other sounds are from a long forgotten source (I am so sorry >_<), likely a free itch.io Gameboy Sound Effect pack. '}
   </p>;
 
   return (<div className={styles.dialogueOptionContainer}>

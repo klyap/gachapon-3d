@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useGLTF, PerspectiveCamera } from '@react-three/drei'
 import * as THREE from 'three';
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber'
@@ -32,6 +32,11 @@ export function StarKnob({ setPrize, setLoading }: PropsT) {
       dundun: [55000, 55100],
     }
   });
+
+  useEffect(() => {
+    document.body.style.cursor = hovered ? 'pointer' : 'auto'
+  })
+
 
   const { rotation } = useSpring({
     rotation: (hovered && !active) ? Math.PI / 6 : active ? Math.PI : 0,
