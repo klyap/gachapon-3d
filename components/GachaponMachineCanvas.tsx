@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { createRoot } from 'react-dom/client'
-import React, { useRef, useState, Suspense, useEffect } from 'react'
+import React, { useRef, useState, Suspense, useEffect, useMemo } from 'react'
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber'
 import { Environment, OrbitControls, useGLTF, PerspectiveCamera, Sparkles } from '@react-three/drei'
 import useSound from 'use-sound';
@@ -10,17 +10,31 @@ import { StarKnob } from './StarKnob';
 import { Floaty } from './Floaty';
 import * as material from './materials';
 import { PrizeData } from '../types'
+import fragmentShader from './fragmentShader'
+import vertexShader from './vertexShader'
+import { Particles } from './Particles'
 
-export const GachaponMachineCanvas = ({ setPrize }: { setPrize: React.Dispatch<React.SetStateAction<PrizeData | null>> }) => {
+type PropsT = {
+  setPrize: React.Dispatch<React.SetStateAction<PrizeData | null>>,
+  // loading: boolean,
+  // setLoading: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const GachaponMachineCanvas = ({ setPrize }: PropsT) => {
+  const [loading, setLoading] = useState(false);
+
   const [play] = useSound('./sounds/bg.mp3', { volume: 0.3 });
-
   useEffect(() => {
     // play();
   })
 
+  const setLoadingDebug = (val: boolean) => {
+    console.log("val", val)
+    setLoading(val);
+  }
+
   const PINK = 0xF6DE7E;
   const BLUE = 0xABDB90;
-
   return (
     <Canvas dpr={1.5} linear camera={{ far: 100000, near: 5, fov: 20, position: [-43.88, 218.96, 1766.62] }}>
       <Suspense fallback={null}>
@@ -29,7 +43,8 @@ export const GachaponMachineCanvas = ({ setPrize }: { setPrize: React.Dispatch<R
           // scale={1.2} 
           rotation={new THREE.Euler(0, 0, 0)}
           position={new THREE.Vector3(45, -300, -1200)} />
-        <StarKnob setPrize={setPrize} />
+        <StarKnob setPrize={setPrize} setLoading={setLoading} />
+        {loading && <Particles />}
         <Floaty gltfNodeName='Icosahedron_3' material={material.gem(0xD998F6)} position={[-55, -60, -790]} rotation={[-1.38, 1.01, -0.06]} scale={[2.06, 2.79, 0.36]} />
         <Floaty gltfNodeName='Icosahedron_3_1' material={material.gem(0x77BBDA)} position={[115, -20, -890]} rotation={[0.15, 0.33, -0.61]} scale={[2.06, 2.79, 2.79]} />
         <Floaty gltfNodeName='Icosahedron' material={material.gem(BLUE)} position={[95, 160, -790]} rotation={[-0.13, 0.47, 0.46]} scale={[2.06, 2.79, 2.79]} />

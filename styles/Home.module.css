@@ -4,7 +4,7 @@
 
 .dialogueBox {
   height: 120px;
-  width: 600px;
+  width: 60%;
   border-radius: 50px;
   border: solid 6px palevioletred;
   background-color: antiquewhite;
@@ -13,6 +13,12 @@
   font-size: large;
   display: flex;
   place-content: space-between;
+  min-width: 340px;
+  align-items: center;
+}
+
+.dialogueText {
+  line-height: normal;
 }
 
 .triangle {
@@ -24,6 +30,7 @@
   position: absolute;
   width: 40%;
   border-radius: 50px;
+  box-shadow: 12px 12px;
   border: solid 6px palevioletred;
   background-color: antiquewhite;
   padding: 24px;
@@ -32,11 +39,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 320px;
 }
 
 .prizeName {
   font-size: larger;
   font-weight: 700;
+  margin: 12px 0px;
 }
 
 .prizeImg {
@@ -48,8 +57,21 @@
 
 .prizeDesc {
   text-align: center;
-  margin: 0;
+  margin: 12px;
 }
+
+/* Spinning rays from https://davidwalsh.name/css-spin-revisited */
+/* keyframes for animation;  simple 0 to 360 */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 .arrow {
   position: relative;

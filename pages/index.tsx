@@ -4,7 +4,6 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { GachaponMachineCanvas } from '../components/GachaponMachineCanvas';
 import { Dialogue } from '../components/dialogue';
-import { getWelcomeText } from '../components/dialoguetext';
 import { createContext, useEffect, useState } from 'react';
 import { PrizeData } from '../types';
 import { PrizeModal } from '../components/PrizeModal';
@@ -16,11 +15,12 @@ import { PrizeModal } from '../components/PrizeModal';
 const Home: NextPage = () => {
   const [welcomeText, setWelcomeText] = useState('');
   const [prize, setPrize] = useState<PrizeData | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setWelcomeText(getWelcomeText());
-    // console.log(listEngines());
-  }, [])
+  // useEffect(() => {
+  //   setWelcomeText(getWelcomeText());
+  //   // console.log(listEngines());
+  // }, [])
 
   return (
     <div className={styles.container}>
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <GachaponMachineCanvas setPrize={setPrize} />
         {prize && <PrizeModal prizeData={prize} />}
-        <Dialogue text={welcomeText} />
+        <Dialogue />
       </main>
       {/* </PrizeContext.Provider> */}
     </div>

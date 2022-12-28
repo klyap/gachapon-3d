@@ -9,15 +9,27 @@ import { PrizeData } from '../types';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
-export function StarKnob({ setPrize }: { setPrize: React.Dispatch<React.SetStateAction<PrizeData | null>> }) {
+type PropsT = {
+  setPrize: React.Dispatch<React.SetStateAction<PrizeData | null>>,
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>,
+}
+
+export function StarKnob({ setPrize, setLoading }: PropsT) {
   const { nodes, materials } = useGLTF('./assets/gachapon_machine.gltf')
   const starKnobRef = React.useRef(null);
   const [active, setActive] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const [isKnobDisabled, setIsKnobDisabled] = useState(false);
   const [play] = useSound('./sounds/rattle.mp3', {
     sprite: {
       initial: [5, 200],
       full: [0, 350],
+    }
+  });
+
+  const [playMusic] = useSound('./sounds/iceerules-little-idealogy.mp3', {
+    sprite: {
+      dundun: [55000, 55100],
     }
   });
 
@@ -34,11 +46,20 @@ export function StarKnob({ setPrize }: { setPrize: React.Dispatch<React.SetState
   }
 
   const handleClick = async () => {
-    setActive(true); downloadImage(); play({ id: 'full' })
-    // const prizeData = await generateItem();
-    const prizeData = await fetcher('/api/openai');
-    // const prizeData = {name: "hihi", description: "hiieee", url: }
-    setPrize(prizeData);
+    if (isKnobDisabled) return;
+
+    setIsKnobDisabled(true);
+    setLoading(true);
+    setActive(true);
+    fetcher('/api/openai').then(
+      data => {
+        playMusic({ id: 'dundun' });
+        setPrize(data);
+
+        setIsKnobDisabled(false);
+        setLoading(false);
+      },
+    );
   }
   return (
     <group ref={starKnobRef} position={[20, -170, -690]} dispose={null} >
