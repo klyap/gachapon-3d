@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { useGLTF, PerspectiveCamera } from '@react-three/drei'
+import { useGLTF, PerspectiveCamera, Sparkles } from '@react-three/drei'
 import * as THREE from 'three';
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber'
 import { useSpring, animated, a, config } from "@react-spring/three";
@@ -38,10 +38,25 @@ export function StarKnob({ setPrize, setLoading }: PropsT) {
     document.body.style.cursor = hovered ? 'pointer' : 'auto'
   })
 
-
   const { rotation } = useSpring({
     rotation: (hovered && !active) ? Math.PI / 6 : active ? Math.PI : 0,
-    config: config.wobbly
+    config: {
+      tension: 180,
+      friction: 12,
+    },
+    loop: active ? false : true
+  });
+
+  const { scale } = useSpring({
+    from: {
+      scale: 2.79
+    },
+    to: {
+      scale: 3
+    },
+    loop: true,
+    delay: 1000,
+    config: config.stiff
   });
 
   const downloadImage = () => {
@@ -68,7 +83,7 @@ export function StarKnob({ setPrize, setLoading }: PropsT) {
     );
   }
   return (
-    <group ref={starKnobRef} position={[20, -170, -690]} dispose={null} >
+    <group ref={starKnobRef} position={[20, -195, -690]} dispose={null} >
       <a.mesh
         onPointerDown={handleClick}
         onPointerUp={() => setActive(false)}
@@ -78,8 +93,9 @@ export function StarKnob({ setPrize, setLoading }: PropsT) {
         geometry={nodes.Star.geometry}
         material={material.yellow}
         rotation-z={rotation}
-        scale={2.79}
-      />
+        scale={isKnobDisabled ? 2.79 : scale}
+      >
+      </a.mesh>
     </group>
   )
 }

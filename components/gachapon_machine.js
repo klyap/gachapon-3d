@@ -79,7 +79,7 @@ export function GachaponMachine(props) {
       {/* <mesh geometry={nodes.Icosahedron.geometry} material={material.gem} position={[44.39, 474.58, 403.2]} rotation={[-0.13, 0.47, 0.46]} scale={[2.06, 2.79, 2.79]} /> */}
 
       <mesh geometry={nodes.Cylinder.geometry} material={material.paleyellow} position={[-16.14, -92.99, 364.3]} rotation={[3.14, 0, 0]} scale={2.79} />
-      <mesh geometry={nodes.Torus_3.geometry} material={material.pink} position={[-23.98, -10.81, 519]} rotation={[-0.02, 0, 0]} scale={2.79} />
+      {/* <mesh geometry={nodes.Torus_3.geometry} material={material.pink} position={[-23.98, -10.81, 519]} rotation={[-0.02, 0, 0]} scale={2.79} /> */}
       {/* <mesh geometry={nodes.Star.geometry} material={material.yellow} position={[-27.83, 109.66, 518.23]} rotation={[0, 0, 0]} scale={2.79} /> */}
       <mesh geometry={nodes.Torus.geometry} material={material.pink} position={[-18.99, 185.9, 384.13]} rotation={[-1.6, 0, 0]} scale={[2.79, 2.76, 2.79]} />
       <mesh geometry={nodes.Torus_2.geometry} material={material.pink} position={[-19.68, -100.74, 382.08]} rotation={[-1.6, 0, 0]} scale={2.79} />

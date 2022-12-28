@@ -32,9 +32,9 @@ const Options = ({ setText, setShowOption }: { setText: Dispatch<SetStateAction<
     </a>
     {" and the daemon text-davinci-300. "}</p>;
   const musicText = <p>
-    {"You are listening to 'little ideology', conjured by the bard "}
+    {"When you activate the star knob, you will hear 'little ideology', crafted by "}
     <a className={styles.link} href={"https://touhoujam.bandcamp.com/album/touhou-jam-jams"}>{'iceerules'}</a>.
-    {' Other sounds are from a long forgotten source (I am so sorry >_<), likely a free itch.io Gameboy Sound Effect pack. '}
+    {' Other sounds are from a long forgotten source (I\'m so sorry >_<)'}
   </p>;
 
   return (<div className={styles.dialogueOptionContainer}>
