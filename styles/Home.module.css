@@ -2,24 +2,70 @@
   padding: 0 2rem;
 }
 
+.dialogueContainer {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  min-width: 340px;
+  position: absolute;
+  bottom: 100px;
+}
+
 .dialogueBox {
   height: 120px;
-  width: 60%;
+  width: 100%;
   border-radius: 50px;
   border: solid 6px palevioletred;
   background-color: antiquewhite;
-  padding: 24px;
   color: palevioletred;
   font-size: large;
   display: flex;
   place-content: space-between;
-  min-width: 340px;
   align-items: center;
+  padding: 24px;
+}
+
+.dialogueBox:hover {
+  cursor: pointer;
+}
+
+.dialogueOptionContainer {
+  position: absolute;
+  right: 0;
+  bottom: 120px;
 }
 
 .dialogueText {
   line-height: normal;
 }
+
+.link {
+  font-weight: bold;
+}
+
+
+.dialogueOption {
+  /* height: 120px; */
+
+  /* width: 250px; */
+  border-radius: 50px;
+  /* border: solid 6px palevioletred; */
+  background-color: antiquewhite;
+  padding: 12px;
+  color: palevioletred;
+  font-size: large;
+  display: flex;
+  place-content: space-between;
+  /* min-width: 240px; */
+  align-items: center;
+
+}
+
+.dialogueOption:hover {
+  border: solid 2px palevioletred;
+  cursor: pointer;
+}
+
 
 .triangle {
   font-size: xx-large;
