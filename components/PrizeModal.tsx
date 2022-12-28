@@ -19,6 +19,6 @@ export const PrizeModal = ({ prizeData, setPrize }: { prizeData: PrizeData, setP
     <h1 className={styles.prizeName}>{prizeData.name}</h1>
     <p className={styles.prizeDesc}>{prizeData.description}</p>
 
-    <button onClick={() => setPrize(null)} className={styles.dialogueOption}>{'Again!'}</button>
+    <button onClick={() => setPrize(null)} className={styles.button}>{'Again!'}</button>
   </div>)
 }

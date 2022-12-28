@@ -54,13 +54,42 @@
   place-content: space-between;
   /* min-width: 240px; */
   align-items: center;
-
 }
 
 .dialogueOption:hover {
   border: solid 2px white;
   cursor: pointer;
 }
+
+.button {
+  /* height: 120px; */
+
+  /* width: 250px; */
+  border-radius: 50px;
+  /* border: solid 2px palevioletred;
+  background-color: antiquewhite; */
+  color: palevioletred;
+
+  border: solid 2px white;
+  background-color: palevioletred;
+  color: white;
+
+  padding: 12px;
+  font-size: large;
+  display: flex;
+  place-content: space-between;
+  /* min-width: 240px; */
+  align-items: center;
+  position: absolute;
+  bottom: -75px;
+}
+
+.button:hover {
+  border: solid 2px palevioletred;
+  cursor: pointer;
+}
+
+
 
 
 .triangle {

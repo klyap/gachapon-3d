@@ -29,7 +29,7 @@ export const generateItem = async () => {
   const openai = new OpenAIApi(configuration);
   const req = {
     "model": "text-davinci-003", //"text-davinci-003", "babbage", "curie", "ada", ""
-    "prompt": "give me a name for a cute magical item, followed by the symbol ' - ' and then a description of its appearance and lore\n",
+    "prompt": "give me a name for a cute magical space item, followed by the symbol ' - ' and then a description of its appearance and lore\n",
     // "prompt": "give me a name for a cute magical item, followed by the symbol ' - ' and then a short description of it, followed by the symbol ' - ' and then its color\n",
     "max_tokens": 60,
     "temperature": 1.2,
