@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { PrizeData } from "../types"
 import styles from '../styles/Home.module.css'
 
-export const PrizeModal = ({ prizeData }: { prizeData: PrizeData }) => {
+export const PrizeModal = ({ prizeData, setPrize }: { prizeData: PrizeData, setPrize: React.Dispatch<React.SetStateAction<PrizeData | null>> }) => {
 
   const style = (x: number, y: number, size: number) => ({
     position: 'absolute',
@@ -18,5 +18,7 @@ export const PrizeModal = ({ prizeData }: { prizeData: PrizeData }) => {
     <img style={style(100, 10, 80)} src={'./assets/sparkle.png'} /> */}
     <h1 className={styles.prizeName}>{prizeData.name}</h1>
     <p className={styles.prizeDesc}>{prizeData.description}</p>
+
+    <button onClick={() => setPrize(null)} className={styles.dialogueOption}>{'Again!'}</button>
   </div>)
 }

@@ -33,7 +33,7 @@ const Home: NextPage = () => {
       {/* <PrizeContext.Provider value={{ setPrize: setPrize }}> */}
       <main className={styles.main}>
         <GachaponMachineCanvas setPrize={setPrize} />
-        {prize && <PrizeModal prizeData={prize} />}
+        {prize && <PrizeModal prizeData={prize} setPrize={setPrize} />}
         <Dialogue />
       </main>
       {/* </PrizeContext.Provider> */}

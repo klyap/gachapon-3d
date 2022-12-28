@@ -70,6 +70,7 @@
 
 .prizeModal {
   position: absolute;
+  top: 20px;
   width: 40%;
   border-radius: 50px;
   box-shadow: 12px 12px;
@@ -91,7 +92,7 @@
 }
 
 .prizeImg {
-  width: 256px;
+  width: 160px;
   border-radius: 20px;
   margin: 12px;
   border: solid white thick;
@@ -100,6 +101,7 @@
 .prizeDesc {
   text-align: center;
   margin: 12px;
+  margin-bottom: 24px;
 }
 
 /* Spinning rays from https://davidwalsh.name/css-spin-revisited */

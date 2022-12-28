@@ -24,13 +24,14 @@ export function StarKnob({ setPrize, setLoading }: PropsT) {
     sprite: {
       initial: [5, 200],
       full: [0, 350],
-    }
+    },
   });
 
   const [playMusic] = useSound('./sounds/iceerules-little-idealogy.mp3', {
     sprite: {
       dundun: [55000, 55100],
-    }
+    },
+    volume: 0.2
   });
 
   useEffect(() => {
