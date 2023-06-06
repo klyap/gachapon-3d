@@ -17,6 +17,7 @@ type PropsT = {
 }
 
 export function Floaty(props: PropsT) {
+  // @ts-ignore
   const { nodes } = useGLTF('./assets/gachapon_machine.gltf')
   const ref = React.useRef(null);
   const randomness = Math.random() * 6 + 1;
@@ -45,7 +46,8 @@ export function Floaty(props: PropsT) {
         rotation={props.rotation}
         scale={props.scale}
       />
-      <Sparkles count={40} scale={80} size={5000} speed={200} />
+
+      {/* <Sparkles count={40} scale={80} size={5000} speed={200} /> */}
     </group>
   )
 }
