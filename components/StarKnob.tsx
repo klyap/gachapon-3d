@@ -15,6 +15,7 @@ type PropsT = {
 }
 
 export function StarKnob({ setPrize, setLoading }: PropsT) {
+  // @ts-ignore
   const { nodes, materials } = useGLTF('./assets/gachapon_machine.gltf')
   const starKnobRef = React.useRef(null);
   const [active, setActive] = useState(false);

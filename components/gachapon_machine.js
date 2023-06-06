@@ -8,6 +8,7 @@ import * as THREE from 'three';
 import * as material from './materials';
 
 export function GachaponMachine(props) {
+  // @ts-ignore
   const { nodes, materials } = useGLTF('./assets/gachapon_machine.gltf')
 
   return (
